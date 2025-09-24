@@ -1,0 +1,8 @@
+[org]
+disclosures = []
+
+[upstream]
+services = [
+    { domain = "vercel.com", service_type = ["shared-hosting", "cdn"] },
+    { domain = "mongodb.com", service_type = ["database"] }
+]
