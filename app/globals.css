@@ -12,6 +12,10 @@
   --font-mono: var(--font-geist-mono);
 }
 
+@theme {
+  --breakpoint-xs: 30rem;
+}
+
 /* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
@@ -35,4 +39,8 @@ body {
 
 .round_marking {
   @apply relative after:content-[''] after:-rotate-5 after:w-[170px] after:h-[70px] after:-left-10 after:bottom-[-10px] after:z-10 after:absolute after:bg-center after:bg-no-repeat after:bg-cover after:bg-[url('../public/round-marking.svg')];
+}
+
+.navbar-get-started-button {
+  @apply py-2 px-4 bg-[#7ae326] hover:cursor-pointer font-medium rounded-full transform transition active:scale-96;
 }

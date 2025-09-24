@@ -54,10 +54,7 @@ export default function Navbar() {
           </li>
         </ul>
 
-        <button
-          type="button"
-          className="py-2 px-4 bg-[#7ae326] hover:cursor-pointer font-medium rounded-full transform transition active:scale-95"
-        >
+        <button type="button" className="navbar-get-started-button">
           Get started
         </button>
       </nav>
