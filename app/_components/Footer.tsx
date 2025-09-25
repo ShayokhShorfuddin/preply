@@ -5,9 +5,11 @@ import LinkedIn from "@/public/linkedin.svg";
 import LogoWhite from "@/public/logo-white.svg";
 import X from "@/public/x.svg";
 
+// TODO: Send classnames to globals.css and use them here for readability
+
 export default function Footer() {
   return (
-    <footer className="px-[1rem] sm:px-[2rem] bg-neutral-950 font-sans mt-[6rem]">
+    <footer className="px-[1rem] sm:px-[2rem] bg-neutral-950 mt-[6rem] font-sans">
       <div className="flex flex-col lg:flex-row gap-y-10 gap-x-2 justify-between pt-18">
         {/* Logo and subtext */}
         <div>
@@ -31,7 +33,7 @@ export default function Footer() {
               <Link href="/" className="text-sm">
                 Careers
               </Link>
-              <p className="py-0.5 px-1 text-xs rounded bg-neutral-800 text-[#7ae326] select-none">
+              <p className="py-0.5 px-1 text-xs rounded bg-neutral-800 text-preply-green select-none">
                 HIRING
               </p>
             </div>

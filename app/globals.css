@@ -14,23 +14,13 @@
 
 @theme {
   --breakpoint-xs: 30rem;
+  --color-preply-green: #7ae326;
 }
-
-/* @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-} */
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
-}
-
-.navbar {
-  @apply flex items-center justify-between py-4 px-20 relative font-sans select-none;
 }
 
 .green_underlined {
@@ -40,7 +30,18 @@ body {
 .round_marking {
   @apply relative after:content-[''] after:-rotate-5 after:w-[170px] after:h-[70px] after:-left-10 after:bottom-[-10px] after:z-10 after:absolute after:bg-center after:bg-no-repeat after:bg-cover after:bg-[url('../public/round-marking.svg')];
 }
+.navbar {
+  @apply flex items-center justify-between py-4 px-20 relative font-sans select-none;
+
+  ul {
+    @apply flex py-2.5 px-7 rounded-full space-x-3 z-10 text-sm font-medium ring-1 ring-preply-green;
+
+    a {
+      @apply p-1.5 hover:text-preply-green transition duration-350;
+    }
+  }
+}
 
 .navbar-get-started-button {
-  @apply py-2 px-4 bg-[#7ae326] hover:cursor-pointer font-medium rounded-full transform transition active:scale-96;
+  @apply py-2 px-4 bg-preply-green hover:cursor-pointer font-medium rounded-full transform transition active:scale-96;
 }

@@ -5,10 +5,11 @@ import Pointer from "@/public/pointer.svg";
 
 const lexend = Lexend_Deca({ subsets: ["latin"] });
 
+// TODO: Send classnames to globals.css and use them here for readability
 export default function Hero() {
   return (
     <section>
-      <div className="flex flex-col items-center mt-17">
+      <div className="flex flex-col items-center mt-17 font-sans">
         <div className="relative">
           <h1
             className={`${lexend.className} text-center text-5xl leading-tight`}
@@ -32,7 +33,7 @@ export default function Hero() {
           />
         </div>
 
-        <p className="mt-10 text-neutral-700 max-w-2xl text-center font-sans">
+        <p className="mt-10 text-neutral-700 max-w-2xl text-center">
           A complete job-prep platform that lets you practice interviews, refine
           your résumé, and build steady confidence until the offer arrives. Map
           your skills to any role, rehearse with tailored questions, and track
@@ -41,7 +42,7 @@ export default function Hero() {
 
         <button
           type="button"
-          className="py-2 px-5 bg-[#7ae326] hover:cursor-pointer font-medium rounded-full transform transition active:scale-98 mt-10 font-sans select-none"
+          className="py-2 px-5 bg-preply-green hover:cursor-pointer font-medium rounded-full transform transition active:scale-98 mt-10 select-none"
         >
           Start Preparing From Today
         </button>

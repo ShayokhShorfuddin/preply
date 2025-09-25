@@ -5,52 +5,27 @@ import Logo from "@/public/logo.svg";
 export default function Navbar() {
   return (
     <header>
-      <nav className="navbar">
+      <nav className="navbar font-sans">
         <Link href="/">
           <Image className="w-30" src={Logo} alt="Logo" />
         </Link>
 
         {/* Navbar links here */}
-        <ul className="flex py-2.5 px-7 rounded-full space-x-3 z-10 text-sm font-medium ring-1 ring-[#7ae326]">
+        <ul>
           <li>
-            <Link
-              className="p-1.5 hover:text-[#7ae326] transition duration-350"
-              href="/"
-            >
-              Products
-            </Link>
+            <Link href="/">Products</Link>
           </li>
           <li>
-            <Link
-              className="p-1.5 hover:text-[#7ae326] transition duration-350"
-              href="/articles"
-            >
-              Articles
-            </Link>
+            <Link href="/articles">Articles</Link>
           </li>
           <li>
-            <Link
-              className="p-1.5 hover:text-[#7ae326] transition duration-350"
-              href="/community"
-            >
-              Community
-            </Link>
+            <Link href="/community">Community</Link>
           </li>
           <li>
-            <Link
-              className="p-1.5 hover:text-[#7ae326] transition duration-350"
-              href="/pricing"
-            >
-              Pricing
-            </Link>
+            <Link href="/pricing">Pricing</Link>
           </li>
           <li>
-            <Link
-              className="p-1.5 hover:text-[#7ae326] transition duration-350"
-              href="/status"
-            >
-              Status
-            </Link>
+            <Link href="/status">Status</Link>
           </li>
         </ul>
 
