@@ -21,11 +21,13 @@ export default function Hero() {
 
           {/* Envelop and Cursor */}
           <Image
+            priority
             src={Envelop}
             alt="Envelope"
             className="absolute -bottom-1 -left-20 -rotate-12 size-11"
           />
           <Image
+            priority
             src={Pointer}
             alt="Pointer"
             className="absolute -bottom-1 -right-20 -rotate-2 size-11"
