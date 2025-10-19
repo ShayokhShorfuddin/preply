@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
-import { ReactScan } from "./_components/ReactScan";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -20,8 +20,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      {/* We don't want to include the ReactScan component in production builds. Its just for local tests */}
-      {process.env.NODE_ENV === "development" && <ReactScan />}
+      {/* React-scan for local development only */}
+      {process.env.NODE_ENV === "development" && (
+        <head>
+          <script src="https://unpkg.com/react-scan/dist/auto.global.js" />
+        </head>
+      )}
+
       <body className={`${geistSans.variable} antialiased`}>{children}</body>
     </html>
   );

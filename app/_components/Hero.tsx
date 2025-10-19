@@ -5,7 +5,6 @@ import Pointer from "@/public/pointer.svg";
 
 const lexend = Lexend_Deca({ subsets: ["latin"] });
 
-// TODO: Send classnames to globals.css and use them here for readability
 export default function Hero() {
   return (
     <section>

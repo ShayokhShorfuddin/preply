@@ -1,32 +1,26 @@
-import { Lexend_Deca } from "next/font/google";
 import Image from "next/image";
 import Absorbed from "@/public/illustrations/undraw_absorbed.png";
-
-const lexend = Lexend_Deca({ subsets: ["latin"] });
-
-// TODO: After this section is done, send classnames to globals.css and use them here for readability
 
 export default function TextAndImage() {
   return (
     <section>
-      <div className="flex justify-center font-sans mt-[10rem]">
+      {/* TODO: Add more of these components. We might choose a for loop to render multiple components (assuming we have the texts and images ready and the component will stay mostly the same with minimal changes) */}
+      <div className="flex justify-center font-sans mt-[8rem]">
         <div className="flex gap-x-[12rem]">
           <div>
-            <p
-              className={`${lexend.className} text-[20px] text-neutral-900 leading-tight`}
-            >
-              A Modern Approach to <br />{" "}
-              <span className="text-[36px] text-neutral-900">
+            <p className="font-sans text-[18px] text-neutral-700 leading-tight">
+              A modern approach to <br />{" "}
+              <span className="text-[36px] text-neutral-900 font-medium">
                 Traditional Problems<span className="text-preply-green">.</span>
               </span>
             </p>
 
-            {/* TODO: Edit text */}
             <p className="max-w-lg mt-[1.1rem] text-neutral-700">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi
-              vitae nihil odio, quo cupiditate illo! Eius maiores id explicabo
-              quam, illo, exercitationem ut voluptate provident incidunt aliquam
-              totam odit tenetur!
+              Preply streamlines your interview preparation by providing
+              personalized practice sessions, real-time feedback, and expert
+              guidance. We eliminate the stress of scattered resources and
+              uncertainty, helping you build confidence and master the skills
+              needed to land your dream job.
             </p>
           </div>
 

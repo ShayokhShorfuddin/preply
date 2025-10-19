@@ -30,18 +30,3 @@ body {
 .round_marking {
   @apply relative after:content-[''] after:-rotate-5 after:w-[170px] after:h-[70px] after:-left-10 after:bottom-[-10px] after:z-10 after:absolute after:bg-center after:bg-no-repeat after:bg-cover after:bg-[url('../public/round-marking.svg')];
 }
-.navbar {
-  @apply flex items-center justify-between py-4 px-20 relative font-sans select-none;
-
-  ul {
-    @apply flex py-2.5 px-7 rounded-full space-x-3 z-10 text-sm font-medium ring-1 ring-preply-green;
-
-    a {
-      @apply p-1.5 hover:text-preply-green transition duration-350;
-    }
-  }
-}
-
-.navbar-get-started-button {
-  @apply py-2 px-4 bg-preply-green hover:cursor-pointer font-medium rounded-full transform transition active:scale-96;
-}

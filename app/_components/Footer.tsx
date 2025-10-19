@@ -5,8 +5,6 @@ import LinkedIn from "@/public/linkedin.svg";
 import LogoWhite from "@/public/logo-white.svg";
 import X from "@/public/x.svg";
 
-// TODO: Send classnames to globals.css and use them here for readability
-
 export default function Footer() {
   return (
     <footer className="px-[1rem] sm:px-[2rem] bg-neutral-950 mt-[6rem] font-sans">
