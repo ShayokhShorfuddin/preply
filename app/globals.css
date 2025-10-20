@@ -28,5 +28,5 @@ body {
 }
 
 .round_marking {
-  @apply relative after:content-[''] after:-rotate-5 after:w-[170px] after:h-[70px] after:-left-10 after:bottom-[-10px] after:z-10 after:absolute after:bg-center after:bg-no-repeat after:bg-cover after:bg-[url('../public/round-marking.svg')];
+  @apply relative after:content-[''] after:-rotate-5 after:w-[80px] after:h-[40px] after:sm:w-[110px] after:sm:h-[50px] after:md:w-[140px] after:md:h-[70px] after:lg:w-[160px] after:lg:h-[80px] after:-left-3 after:bottom-[-5px] after:sm:-left-5 after:sm:bottom-[-6px] after:md:-left-6 after:md:bottom-[-8px] after:z-10 after:absolute after:bg-center after:bg-no-repeat after:bg-cover after:bg-[url('../public/round-marking.svg')];
 }

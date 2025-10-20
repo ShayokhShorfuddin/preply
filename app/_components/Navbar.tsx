@@ -87,7 +87,7 @@ export default function Navbar() {
         <div className="flex items-center gap-x-2">
           <button
             type="button"
-            className="py-1 xs:py-2 px-3 xs:px-4 text-sm xs:text-base bg-preply-green hover:cursor-pointer font-medium rounded-full transform transition active:scale-96"
+            className="py-1 sm:py-2 px-3 sm:px-4 text-sm sm:text-base bg-preply-green hover:cursor-pointer font-medium rounded-full transform transition active:scale-96"
           >
             Get started
           </button>
