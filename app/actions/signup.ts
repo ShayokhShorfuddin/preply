@@ -1,5 +1,7 @@
 "use server";
 
+import { auth } from "@/utils/auth";
+
 export async function signUpUser({
   name,
   email,
@@ -9,5 +11,13 @@ export async function signUpUser({
   email: string;
   password: string;
 }) {
-  console.log("Signing up user:", { name, email, password });
+  const data = await auth.api.signUpEmail({
+    body: {
+      name: name,
+      email: email,
+      password: password,
+    },
+  });
+
+  console.log("Sign up response:", data);
 }
