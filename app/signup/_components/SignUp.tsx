@@ -5,6 +5,7 @@ import { type AnyFieldApi, useForm } from "@tanstack/react-form";
 import Image from "next/image";
 import Link from "next/link";
 import { z } from "zod";
+import { signUpUser } from "@/app/actions/signup";
 import google from "@/public/google.svg";
 import logo from "@/public/logo.svg";
 
@@ -36,7 +37,7 @@ const signUpSchema = z
       .nonempty({ message: "Please confirm your password." }),
   })
   .refine((data) => data.password === data.confirmPassword, {
-    message: "Passwords don't match. Please try again.",
+    message: "Passwords don't match.",
     path: ["confirmPassword"],
   });
 
@@ -53,13 +54,12 @@ export function SignUp() {
       onChange: signUpSchema,
     },
 
-    onSubmit: ({ value }) => {
-      console.log(
-        value.name,
-        value.email,
-        value.password,
-        value.confirmPassword,
-      );
+    onSubmit: async ({ value }) => {
+      await signUpUser({
+        name: value.name,
+        email: value.email,
+        password: value.password,
+      });
     },
   });
   return (
@@ -173,7 +173,6 @@ export function SignUp() {
             {([canSubmit, isValidating]) => (
               <button
                 type="submit"
-                onClick={form.handleSubmit}
                 disabled={!canSubmit || isValidating}
                 className="px-3 py-2 hover:cursor-pointer bg-neutral-800 rounded-lg text-sm text-neutral-200 font-medium transition-colors duration-150 disabled:cursor-not-allowed disabled:bg-neutral-900"
               >
