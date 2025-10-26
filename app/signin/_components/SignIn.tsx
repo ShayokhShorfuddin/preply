@@ -6,6 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { z } from "zod";
+import { signInUser } from "@/app/actions/signin";
 import eye from "@/public/eye.svg";
 import eye_closed from "@/public/eye-closed.svg";
 import Google from "@/public/google.svg";
@@ -35,7 +36,10 @@ export default function SignIn() {
     },
 
     onSubmit: async ({ value }) => {
-      console.log(value);
+      await signInUser({
+        email: value.email,
+        password: value.password,
+      });
     },
   });
 
