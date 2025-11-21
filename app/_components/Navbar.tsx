@@ -2,16 +2,21 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import close from "@/public/close.svg";
 import logo from "@/public/logo.svg";
 import menu from "@/public/menu.svg";
+import { authClient } from "@/utils/auth-client";
+import ProductsMenu from "../signup/_components/ProductsMenu";
 
 export default function Navbar() {
   // State to manage the visibility of the mobile menu
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const closeMenuButtonRef = useRef<HTMLButtonElement>(null);
+
+  const router = useRouter();
 
   // Close dropdown when user clicks outside
   useEffect(() => {
@@ -33,6 +38,16 @@ export default function Navbar() {
     };
   }, []);
 
+  async function handleGetStarted() {
+    const { data: session } = await authClient.getSession();
+
+    if (!session) {
+      router.push("/signin");
+    } else {
+      router.push("/home");
+    }
+  }
+
   return (
     <header>
       <nav className="flex items-center justify-between py-4 px-[1.2rem] lg:px-[3rem] relative font-sans select-none">
@@ -43,12 +58,7 @@ export default function Navbar() {
         {/* Navbar links here */}
         <ul className="hidden md:flex py-2.5 px-7 rounded-full space-x-3 z-10 text-sm font-medium ring-1 ring-preply-green">
           <li>
-            <Link
-              href="/products"
-              className="p-1.5 hover:text-preply-green transition duration-350"
-            >
-              Products
-            </Link>
+            <ProductsMenu />
           </li>
           <li>
             <Link
@@ -87,6 +97,7 @@ export default function Navbar() {
         <div className="flex items-center gap-x-2">
           <button
             type="button"
+            onClick={handleGetStarted}
             className="py-1 sm:py-2 px-3 sm:px-4 text-sm sm:text-base bg-preply-green hover:cursor-pointer font-medium rounded-full transform transition active:scale-96"
           >
             Get started

@@ -12,7 +12,7 @@ const options = {};
 let client: MongoClient;
 
 if (process.env.NODE_ENV === "development") {
-  const globalWithMongo = global as typeof globalThis & {
+  const globalWithMongo = globalThis as typeof globalThis & {
     _mongoClient?: MongoClient;
   };
 

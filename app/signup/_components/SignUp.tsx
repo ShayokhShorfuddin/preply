@@ -8,6 +8,7 @@ import { z } from "zod";
 import { signUpUser } from "@/app/actions/signup";
 import google from "@/public/google.svg";
 import logo from "@/public/logo.svg";
+import { authClient } from "@/utils/auth-client";
 
 const signUpSchema = z
   .object({
@@ -55,11 +56,14 @@ export function SignUp() {
     },
 
     onSubmit: async ({ value }) => {
-      await signUpUser({
-        name: value.name,
-        email: value.email,
-        password: value.password,
-      });
+      try {
+        await authClient.signUp.email({
+          name: value.name,
+          email: value.email,
+          password: value.password,
+        });
+      } catch (error) {}
+      // TODO: Catch errors from better-auth
     },
   });
   return (
@@ -72,6 +76,7 @@ export function SignUp() {
         </p>
 
         <form className="w-full">
+          {/* TODO: Implement Google Sign-In */}
           <button
             type="button"
             className="flex gap-x-3 justify-center items-center text-nowrap w-full border border-preply-green text-neutral-800 font-medium mt-6 py-2 rounded-sm hover:cursor-pointer select-none"

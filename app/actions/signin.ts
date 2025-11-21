@@ -1,6 +1,7 @@
 "use server";
 
 import { headers } from "next/headers";
+import { redirect } from "next/navigation";
 import { auth } from "@/utils/auth";
 
 export async function signInUser({
@@ -10,14 +11,19 @@ export async function signInUser({
   email: string;
   password: string;
 }) {
-  const data = await auth.api.signInEmail({
-    body: {
-      email: email,
-      password: password,
-    },
+  try {
+    const data = await auth.api.signInEmail({
+      body: {
+        email: email,
+        password: password,
+      },
 
-    headers: await headers(),
-  });
+      headers: await headers(),
+    });
+  } catch (error) {
+    console.error("Error signing in:", error);
+  }
 
-  console.log("Sign in response:", data);
+  // TODO: It probably shouldnt be here
+  redirect("/home");
 }

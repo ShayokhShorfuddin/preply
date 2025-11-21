@@ -14,6 +14,7 @@ export const auth = betterAuth({
   baseURL:
     process.env.NODE_ENV === "development"
       ? "http://localhost:3000"
-      : "https://sage-io.vercel.app",
-  trustedOrigins: ["http://localhost:3000", "https://sage-io.vercel.app"],
+      : "https://preply.vercel.app",
+  // TODO: ⚠️⚠️⚠️⚠️ Make sure these URLs are correct when deploying to vercel
+  trustedOrigins: ["http://localhost:3000", "https://preply.vercel.app"],
 });
